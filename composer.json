@@ -1,0 +1,18 @@
+{
+    "name": "jwest/slim-testing",
+    "description": "Simple util for integration tests in slim framework",
+    "authors": [
+        {
+            "name": "JWest",
+            "email": "jwest@jwest.pl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "slim/slim": "2.3.0",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": { "Slim": "." }
+    }
+}
