@@ -14,6 +14,11 @@ abstract class Testing extends PHPUnit_Framework_TestCase {
         return (new Runner($this->app))->run();
     }
 
+    public function delete($route) {
+        (new Environment)->delete($route);
+        return (new Runner($this->app))->run();
+    }
+
     public function post($route, $params) {
         (new Environment)->post($route, http_build_query($params));
         return (new Runner($this->app))->run();

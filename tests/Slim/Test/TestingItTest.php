@@ -16,6 +16,10 @@ class TestingTest extends Testing {
         $this->assertEquals(404, $response->getStatus());
     }
 
+    public function testDeleteProduct() {
+        $this->assertEquals('ok', $this->delete('/product')->getBody());
+    }
+
     public function testDrawApi() {
         $response = $this->post('/api/draw', array('key' => 'value'));
         $this->assertEquals('value', json_decode($response->getBody())->code);

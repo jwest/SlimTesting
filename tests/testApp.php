@@ -8,6 +8,10 @@ $app->get('/', function(){
     echo 'test';
 });
 
+$app->delete('/product', function() {
+    echo 'ok';
+});
+
 $app->post('/api/draw', function() use ($app) {
     echo json_encode(
         array(
