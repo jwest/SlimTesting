@@ -33,7 +33,7 @@ class Environment {
 
     private function parseQueryString($route) {
         $parts = $this->explodeRoute($route);
-        return isset($parts[1]) ? '?'.$parts[1] : '';
+        return isset($parts[1]) ? $parts[1] : '';
     }
 
     private function parseRoute($route) {

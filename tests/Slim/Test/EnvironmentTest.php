@@ -13,7 +13,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase {
 
     public function testDoEnvWithData() {
         (new Env())->doEnv('POST', '/test?key=value', 'test');
-        $this->checkEnv('POST', '/test', '?key=value', 'test');
+        $this->checkEnv('POST', '/test', 'key=value', 'test');
     }
 
     //GET
@@ -30,7 +30,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase {
 
     public function testGetWithQueryString() {
         (new Env())->get('/testRoute/1?key=value');
-        $this->checkEnv('GET', '/testRoute/1', '?key=value');
+        $this->checkEnv('GET', '/testRoute/1', 'key=value');
     }
 
     //DELETE
@@ -47,7 +47,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase {
 
     public function testDeleteWithQueryString() {
         (new Env())->delete('/testRoute/1?key=value');
-        $this->checkEnv('DELETE', '/testRoute/1', '?key=value');
+        $this->checkEnv('DELETE', '/testRoute/1', 'key=value');
     }
 
     //POST
@@ -64,7 +64,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase {
 
     public function testPostWithQueryString() {
         (new Env())->post('/testRoute/1?key=value');
-        $this->checkEnv('POST', '/testRoute/1', '?key=value');
+        $this->checkEnv('POST', '/testRoute/1', 'key=value');
     }
 
     public function testPostWithPostContents() {
@@ -86,7 +86,7 @@ class EnvironmentTest extends PHPUnit_Framework_TestCase {
 
     public function testPutWithQueryString() {
         (new Env())->put('/testRoute/1?key=value');
-        $this->checkEnv('PUT', '/testRoute/1', '?key=value');
+        $this->checkEnv('PUT', '/testRoute/1', 'key=value');
     }
 
     public function testPutWithPostContents() {
